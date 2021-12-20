@@ -14,4 +14,5 @@ require (
 	github.com/go-kit/log v0.2.0 // indirect
 	github.com/go-logfmt/logfmt v0.5.1 // indirect
 	github.com/logrusorgru/aurora v2.0.3+incompatible // indirect
+	gopkg.in/yaml.v2 v2.4.0 // indirect
 )
