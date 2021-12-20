@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 	"github.com/HashTagApp/UserAuth-Api/internal/app/server"
+	log "github.com/HashTagApp/log"
 	"github.com/gorilla/mux"
-	"log"
 	"net/http"
 	"time"
 )
@@ -15,6 +15,7 @@ var httpServer *http.Server
 func Init(ctx context.Context) {
 	r := mux.NewRouter()
 	port := 8080
+	// Ping
 	r.Handle(`/v1/ping`, server.Ping()).Methods(http.MethodGet)
 
 	StartServer(ctx, port, r)
@@ -40,7 +41,7 @@ func StartServer(ctx context.Context, port int, r http.Handler) {
 		running <- `done`
 	}(ctx)
 
-	log.Printf(fmt.Sprintf(`HTTP router started on port [%d]`, port))
+	log.InfoContext(ctx, fmt.Sprintf(`HTTP router started on port [%d]`, port))
 
 	<-running
 }

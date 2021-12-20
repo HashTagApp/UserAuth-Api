@@ -10,5 +10,5 @@ type PingSvc struct{}
 
 func (PingSvc) Pinging(ctx context.Context) (string, error) {
 
-	return "Ping", nil
+	return "Ping - HashApp", nil
 }
